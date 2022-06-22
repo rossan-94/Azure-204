@@ -1,0 +1,14 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Rossan.Azure.ToolKit/.vs
+/Rossan.Azure.ToolKit/Azure.BlobStore/bin/Debug/net6.0
+/Rossan.Azure.ToolKit/Azure.BlobStore/obj
+/Rossan.Azure.ToolKit/Azure.Data.Model/bin/Debug/net6.0
+/Rossan.Azure.ToolKit/Azure.Data.Model/obj
+/Rossan.Azure.ToolKit/Rossan.Azure.BlobStore/bin/Debug/net6.0
+/Rossan.Azure.ToolKit/Rossan.Azure.BlobStore/obj
+/Rossan.Azure.ToolKit/Rossan.Azure.TableStarage/bin/Debug/net6.0
+/Rossan.Azure.ToolKit/Rossan.Azure.TableStarage/obj
