@@ -12,3 +12,7 @@
 /Rossan.Azure.ToolKit/Rossan.Azure.BlobStore/obj
 /Rossan.Azure.ToolKit/Rossan.Azure.TableStarage/bin/Debug/net6.0
 /Rossan.Azure.ToolKit/Rossan.Azure.TableStarage/obj
+/Rossan.Azure.ToolKit/Rossan.Azure.CosmosDB/bin/Debug/netstandard2.1
+/Rossan.Azure.ToolKit/Rossan.Azure.CosmosDB/obj
+/Rossan.Azure.ToolKit/CosmosDb.Manager/bin/Debug/netstandard2.1
+/Rossan.Azure.ToolKit/CosmosDb.Manager/obj

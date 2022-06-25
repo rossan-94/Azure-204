@@ -86,6 +86,7 @@ namespace Rossan.Azure.TableStarage
             }
             await _tableServiceClient.CreateTableIfNotExistsAsync(tableName).ConfigureAwait(false);
             var tableClient = _tableServiceClient.GetTableClient(tableName);
+            /// tableClient.Query<T>(e => e.PartitionKey == partitionKey, pageSize);
             return tableClient.Query<T>($"PartitionKey eq '{partitionKey}'", pageSize);
         }
 

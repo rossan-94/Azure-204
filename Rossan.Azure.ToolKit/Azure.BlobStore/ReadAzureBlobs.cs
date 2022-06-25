@@ -8,7 +8,7 @@ namespace Azure.BlobStore
 {
     public class ReadAzureBlobs
     {
-        IBlobStoreRepository azureBlobRepository = new AzureBlobStoreRepository("DefaultEndpointsProtocol=https;AccountName=az204storageaccountrp1;AccountKey=PLOG/Sp5JzQnZOVr96hr4KzG+QhOctI1jrAF8vycxbNdgLvt7pHNt7der8v4Rp5tnadFZAn1sq+3+AStSAqSqQ==;EndpointSuffix=core.windows.net", 60);
+        IBlobStoreRepository azureBlobRepository = new AzureBlobStoreRepository("<connectionstring>", 60);
 
         public async Task ReadBlobWithSasAsync(Uri sasUri)
         {

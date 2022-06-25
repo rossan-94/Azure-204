@@ -11,15 +11,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{68E51AB8-B64
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azure.BlobStore", "Azure.BlobStore\Azure.BlobStore.csproj", "{8CB2D36F-6559-4E76-8083-68E66DD349B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rossan.Azure.TableStarage", "Rossan.Azure.TableStarage\Rossan.Azure.TableStarage.csproj", "{4248F340-422A-4EB9-814C-62DBF60A3645}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rossan.Azure.TableStarage", "Rossan.Azure.TableStarage\Rossan.Azure.TableStarage.csproj", "{4248F340-422A-4EB9-814C-62DBF60A3645}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FunctionApp", "FunctionApp", "{85757F49-BB7D-4766-A1C2-AB2BFA045F73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure.TableStorage", "Azure.TableStorage\Azure.TableStorage.csproj", "{EC681BF1-BB6C-4B2E-98B0-DF00E8D291DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azure.TableStorage", "Azure.TableStorage\Azure.TableStorage.csproj", "{EC681BF1-BB6C-4B2E-98B0-DF00E8D291DE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{79EC96A7-DBDD-4DEC-81F1-71C2CF42D822}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azure.Data.Model", "Azure.Data.Model\Azure.Data.Model.csproj", "{7B517CEF-7546-48E4-AA41-16150E35C1FF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azure.Data.Model", "Azure.Data.Model\Azure.Data.Model.csproj", "{7B517CEF-7546-48E4-AA41-16150E35C1FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rossan.Azure.CosmosDB", "Rossan.Azure.CosmosDB\Rossan.Azure.CosmosDB.csproj", "{DAEC79EB-1301-4671-A076-AC29FC57D9FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionApp.Azure.CosmosDb", "FunctionApp.Azure.CosmosDb\FunctionApp.Azure.CosmosDb.csproj", "{F48DC0D2-7DB8-43BE-ABB8-A1F9E0F21097}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Managers", "Managers", "{9CAF71AC-0160-4E1E-949F-204FD3941AC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosDb.Manager", "CosmosDb.Manager\CosmosDb.Manager.csproj", "{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +55,18 @@ Global
 		{7B517CEF-7546-48E4-AA41-16150E35C1FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B517CEF-7546-48E4-AA41-16150E35C1FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B517CEF-7546-48E4-AA41-16150E35C1FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAEC79EB-1301-4671-A076-AC29FC57D9FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEC79EB-1301-4671-A076-AC29FC57D9FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEC79EB-1301-4671-A076-AC29FC57D9FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEC79EB-1301-4671-A076-AC29FC57D9FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F48DC0D2-7DB8-43BE-ABB8-A1F9E0F21097}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F48DC0D2-7DB8-43BE-ABB8-A1F9E0F21097}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F48DC0D2-7DB8-43BE-ABB8-A1F9E0F21097}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F48DC0D2-7DB8-43BE-ABB8-A1F9E0F21097}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +77,9 @@ Global
 		{4248F340-422A-4EB9-814C-62DBF60A3645} = {94833423-2492-419C-B300-0F97B14F8DEC}
 		{EC681BF1-BB6C-4B2E-98B0-DF00E8D291DE} = {85757F49-BB7D-4766-A1C2-AB2BFA045F73}
 		{7B517CEF-7546-48E4-AA41-16150E35C1FF} = {79EC96A7-DBDD-4DEC-81F1-71C2CF42D822}
+		{DAEC79EB-1301-4671-A076-AC29FC57D9FE} = {94833423-2492-419C-B300-0F97B14F8DEC}
+		{F48DC0D2-7DB8-43BE-ABB8-A1F9E0F21097} = {85757F49-BB7D-4766-A1C2-AB2BFA045F73}
+		{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169} = {9CAF71AC-0160-4E1E-949F-204FD3941AC2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C8AF30C9-F953-4E6F-BA03-E4C45C02B737}
