@@ -8,6 +8,8 @@ using Newtonsoft.Json;
 using CosmosDb.Manager;
 using System;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json.Linq;
+using System.Collections.Generic;
 
 namespace FunctionApp.Azure.CosmosDb
 {
@@ -130,13 +132,84 @@ namespace FunctionApp.Azure.CosmosDb
         {
             try
             {
+                string partitionKey = "Laptop";
                 string id = "4ff32abc-ae33-4df1-81a7-8a8148cd9878";
-                var order = await _orderManager.DeleteAsync(id);
+                var order = await _orderManager.DeleteAsync(id, partitionKey);
                 return new OkObjectResult(order);
             }
             catch(Exception ex)
             {
                 return new BadRequestObjectResult("order_delete_fail");
+            }
+        }
+
+        [FunctionName("CreateStoredProcedureCreateOrdersAsync")]
+        public async Task<IActionResult> CreateStoredProcedureCreateOrdersAsync(
+        [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req)
+        {
+            try
+            {
+                string body = File.ReadAllText("../../../storeprocedure/CreateOrders.js");
+                var response = await _orderManager.CreateStoredProcedureAsync("CreateOrders", body);
+                return new OkObjectResult(response.Resource);
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult("createorder_storeprocedure_fail");
+            }
+        }
+
+        [FunctionName("UpdateStoredProcedureCreateOrdersAsync")]
+        public async Task<IActionResult> UpdateStoredProcedureCreateOrdersAsync(
+       [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req)
+        {
+            try
+            {
+                string body = File.ReadAllText("../../../storeprocedure/CreateOrders.js");
+                var response = await _orderManager.CreateStoredProcedureAsync("CreateOrders", body);
+                return new OkObjectResult(response.Resource);
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult("createorder_storeprocedure_fail");
+            }
+        }
+
+        [FunctionName("DeleteStoredProcedureCreateOrdersAsync")]
+        public async Task<IActionResult> DeleteStoredProcedureCreateOrdersAsync(
+       [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req)
+        {
+            try
+            {
+                var response = await _orderManager.DeleteStoredProcedureAsync("CreateOrders");
+                return new OkObjectResult(response.Resource);
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult("createorder_storeprocedure_fail");
+            }
+        }
+
+        [FunctionName("ExecuteStoredProcedureCreateOrdersAsync")]
+        public async Task<IActionResult> ExecuteStoredProcedureCreateOrdersAsync(
+       [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req)
+        {
+            try
+            {
+                string requestBody = string.Empty;
+                using (StreamReader streamReader = new StreamReader(req.Body))
+                {
+                    requestBody = await streamReader.ReadToEndAsync().ConfigureAwait(false);
+                }
+                JObject jObject = JObject.Parse(requestBody);
+                string partitionKey = jObject["partitionKey"].ToString();
+                var orders = JsonConvert.DeserializeObject<List<Order>>(jObject["orders"].ToString());
+                var response = await _orderManager.ExecuteStoredProcedureAsync("CreateOrders", partitionKey, new dynamic[] { orders });
+                return new OkObjectResult(response.Resource);
+            }
+            catch (Exception ex)
+            {
+                return new BadRequestObjectResult("createorder_storeprocedure_fail");
             }
         }
     }

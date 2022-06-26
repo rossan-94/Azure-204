@@ -1,4 +1,5 @@
 ﻿using Microsoft.Azure.Cosmos;
+using Microsoft.Azure.Cosmos.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -53,6 +54,32 @@ namespace Rossan.Azure.CosmosDB
             var containerClient = _databaseClient.GetContainer(containerName);
             return await containerClient.ReplaceItemAsync<T>(entity, id).ConfigureAwait(false);
         }
-       
+
+        public virtual async Task<StoredProcedureResponse> CreateStoredProcedureAsync(string containerName, string storedProcedureName, string body)
+        {
+            var containerClinet = _databaseClient.GetContainer(containerName);
+            var storeProcedureProperties = new StoredProcedureProperties(storedProcedureName, body);
+            return await containerClinet.Scripts.CreateStoredProcedureAsync(storeProcedureProperties).ConfigureAwait(false);
+        }
+
+        public virtual async Task<StoredProcedureResponse> UpdateStoredProcedureAsync(string containerName, string storedProcedureName, string body)
+        {
+            // Note it is not working need some research on it
+            var containerClinet = _databaseClient.GetContainer(containerName);
+            var storeProcedureProperties = new StoredProcedureProperties(storedProcedureName, body);
+            return await containerClinet.Scripts.ReplaceStoredProcedureAsync(storeProcedureProperties).ConfigureAwait(false);
+        }
+
+        public virtual async Task<StoredProcedureResponse> DeleteStoredProcedureAsync(string containerName, string storedProcedureName)
+        {
+            var containerClinet = _databaseClient.GetContainer(containerName);
+            return await containerClinet.Scripts.DeleteStoredProcedureAsync(storedProcedureName).ConfigureAwait(false);
+        }
+
+        public async Task<StoredProcedureExecuteResponse<T>> ExecuteStoredProcedureAsync<T>(string containerName, string storedProcedureName, string partitionKey, dynamic[] body)
+        {
+            var containerClinet = _databaseClient.GetContainer(containerName);
+            return await containerClinet.Scripts.ExecuteStoredProcedureAsync<T>(storedProcedureName, new PartitionKey(partitionKey), body).ConfigureAwait(false);
+        }
     }
 }

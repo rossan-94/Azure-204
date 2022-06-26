@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using Microsoft.Azure.Cosmos.Scripts;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Rossan.Azure.CosmosDB
@@ -16,5 +17,13 @@ namespace Rossan.Azure.CosmosDB
         Task CreateDatabaseAsync(string database);
 
         Task CreateConatinerAsync(string conatinerName, string partitionKey);
+
+        Task<StoredProcedureResponse> CreateStoredProcedureAsync(string containerName, string storedProcedureName, string body);
+
+        Task<StoredProcedureResponse> UpdateStoredProcedureAsync(string containerName, string storedProcedureName, string body);
+
+        Task<StoredProcedureExecuteResponse<T>> ExecuteStoredProcedureAsync<T>(string containerName, string storedProcedureName, string partitionKey, dynamic[] body);
+
+        Task<StoredProcedureResponse> DeleteStoredProcedureAsync(string containerName, string storedProcedureName);
     }
 }
