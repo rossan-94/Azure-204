@@ -202,6 +202,7 @@ namespace FunctionApp.Azure.CosmosDb
                     requestBody = await streamReader.ReadToEndAsync().ConfigureAwait(false);
                 }
                 JObject jObject = JObject.Parse(requestBody);
+                // Note: - stored procedure will execute at a time only for a one partionkey
                 string partitionKey = jObject["partitionKey"].ToString();
                 var orders = JsonConvert.DeserializeObject<List<Order>>(jObject["orders"].ToString());
                 var response = await _orderManager.ExecuteStoredProcedureAsync("CreateOrders", partitionKey, new dynamic[] { orders });

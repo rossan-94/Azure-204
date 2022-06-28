@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "FunctionApp.Azure.KeyVault": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7220",
+      "launchBrowser": false
+    }
+  }
+}

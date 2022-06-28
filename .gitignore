@@ -16,3 +16,5 @@
 /Rossan.Azure.ToolKit/Rossan.Azure.CosmosDB/obj
 /Rossan.Azure.ToolKit/CosmosDb.Manager/bin/Debug/netstandard2.1
 /Rossan.Azure.ToolKit/CosmosDb.Manager/obj
+/Rossan.Azure.ToolKit/Rossan.Azure.KeyVault/bin/Debug/netstandard2.1
+/Rossan.Azure.ToolKit/Rossan.Azure.KeyVault/obj

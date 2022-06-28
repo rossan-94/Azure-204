@@ -23,11 +23,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azure.Data.Model", "Azure.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rossan.Azure.CosmosDB", "Rossan.Azure.CosmosDB\Rossan.Azure.CosmosDB.csproj", "{DAEC79EB-1301-4671-A076-AC29FC57D9FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionApp.Azure.CosmosDb", "FunctionApp.Azure.CosmosDb\FunctionApp.Azure.CosmosDb.csproj", "{F48DC0D2-7DB8-43BE-ABB8-A1F9E0F21097}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunctionApp.Azure.CosmosDb", "FunctionApp.Azure.CosmosDb\FunctionApp.Azure.CosmosDb.csproj", "{F48DC0D2-7DB8-43BE-ABB8-A1F9E0F21097}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Managers", "Managers", "{9CAF71AC-0160-4E1E-949F-204FD3941AC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CosmosDb.Manager", "CosmosDb.Manager\CosmosDb.Manager.csproj", "{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CosmosDb.Manager", "CosmosDb.Manager\CosmosDb.Manager.csproj", "{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rossan.Azure.KeyVault", "Rossan.Azure.KeyVault\Rossan.Azure.KeyVault.csproj", "{69560958-0A6F-4815-9E7E-EE7E41196857}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunctionApp.Azure.KeyVault", "FunctionApp.Azure.KeyVault\FunctionApp.Azure.KeyVault.csproj", "{9BBB9298-82E4-4292-9A90-9E3705242C18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +71,14 @@ Global
 		{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69560958-0A6F-4815-9E7E-EE7E41196857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69560958-0A6F-4815-9E7E-EE7E41196857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69560958-0A6F-4815-9E7E-EE7E41196857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69560958-0A6F-4815-9E7E-EE7E41196857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BBB9298-82E4-4292-9A90-9E3705242C18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BBB9298-82E4-4292-9A90-9E3705242C18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BBB9298-82E4-4292-9A90-9E3705242C18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BBB9298-82E4-4292-9A90-9E3705242C18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +92,8 @@ Global
 		{DAEC79EB-1301-4671-A076-AC29FC57D9FE} = {94833423-2492-419C-B300-0F97B14F8DEC}
 		{F48DC0D2-7DB8-43BE-ABB8-A1F9E0F21097} = {85757F49-BB7D-4766-A1C2-AB2BFA045F73}
 		{BE0AABD6-1CEB-4796-BB91-0DF1B92E7169} = {9CAF71AC-0160-4E1E-949F-204FD3941AC2}
+		{69560958-0A6F-4815-9E7E-EE7E41196857} = {94833423-2492-419C-B300-0F97B14F8DEC}
+		{9BBB9298-82E4-4292-9A90-9E3705242C18} = {85757F49-BB7D-4766-A1C2-AB2BFA045F73}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C8AF30C9-F953-4E6F-BA03-E4C45C02B737}
